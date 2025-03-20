@@ -228,19 +228,33 @@
 
       <!-- Modal Section -->
       <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
-      <dialog id="donate_details" class="modal modal-bottom sm:modal-middle">
+      <!-- <dialog id="donate_details" class="modal modal-bottom sm:modal-middle">
         <div class="modal-box text-center">
           <h3 class="text-2xl font-bold">Congrates!</h3>
           <img class="w-16 py-6 mx-auto" src="assets/coin.png" alt="Coin Icon">
           <p class="py-4">You have donated for mankind <br> <span class="text-xl font-bold">successfully</span> <span id="modal-am"></span></p>
           <div class="modal-action w-full flex justify-center">
             <form method="dialog ">
-              <!-- if there is a button in form, it will close the modal -->
+              
               <button id="btn-some" class="btn">Close Information</button>
             </form>
           </div>
         </div>
-      </dialog>
+      </dialog> -->
+      <!-- Open the modal using ID.showModal() method -->
+      
+<dialog id="donate_details" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box text-center">
+    <h3 class="text-2xl font-bold">Congrates!</h3>
+    <img class="w-16 py-6 mx-auto" src="assets/coin.png" alt="Coin Icon">
+    <p class="py-4">You have donated for mankind <br> <span class="text-xl font-bold">successfully</span> <span id="modal-am"></span></p>
+    <div class="modal-action w-full flex justify-center">
+      <form method="dialog" onsubmit="(e) => {e.preventDefault()}">
+        <button id="btn-some" class="btn">Close Information</button>
+      </form>
+    </div>
+  </div>
+</dialog>
     </main>
     <footer
       id="footer"

@@ -40,13 +40,11 @@ document.getElementById('noakhali-donate').addEventListener('click', function(ev
     let totalDonation = Number(noakhaliDefault.innerText);
     if(noaInput && !isNaN(noaInput)) {
         if(noaInput < Number(mainBalance.innerText)) {
-            
+            donateDetails.showModal();
             let result = noaInput + totalDonation;
             noakhaliDefault.innerHTML= result;
             let restAmount = Number(mainBalance.innerText) - noaInput;
-            mainBalance.innerHTML = restAmount;
-            document.getElementById('modal-am').innerText = noaInput;
-            donateDetails.showModal();
+            mainBalance.innerHTML = restAmount;  
         }
         else {
             alert("You don't have sufficient balance!")
@@ -56,9 +54,5 @@ document.getElementById('noakhali-donate').addEventListener('click', function(ev
         alert('Please input a valid amount to donate')
     }
     document.getElementById('noa-input').value = '';
-    
-})
-document.getElementById('btn-some').addEventListener('click', function(e) {
-    e.preventDefault();
-    donateDetails.classList.add('hidden');
+  
 })
