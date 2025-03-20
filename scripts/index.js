@@ -1,12 +1,13 @@
 const donationArea = document.getElementById('donation-area');
 const historyContainer = document.getElementById('history-container');
-const mainBalance = document.getElementById('main-balance');
-const noakhaliDefault = document.getElementById('noa-default');
+const mainBalance = (document.getElementById('main-balance').innerText);
+const noakhaliDefault = document.getElementById('noa-default').innerText;
 const feniDefault = document.getElementById('feni-default');
 const quotaDefault = document.getElementById('quota-default');
-const noaInput = document.getElementById('noa-input').value;
-const feniInput = document.getElementById('feni-input').value;
-const quotaInput = document.getElementById('quota-input').value;
+const donateDetails = document.getElementById('donateDetails');
+const feniInput = Number(document.getElementById('feni-input').value);
+const quotaInput = Number(document.getElementById('quota-input').value);
+
 let btns = document.querySelectorAll('.active');
 
 function removeActive () {
@@ -31,7 +32,31 @@ document.getElementById('history-btn').addEventListener('click', function() {
 })
 
 document.getElementById('noakhali-donate').addEventListener('click', function() {
-    console.log('click hoise');
+    const noaInput = Number(document.getElementById('noa-input').value);
+    console.log(mainBalance);
+    console.log(typeof noakhaliDefault);
+    let totalDonation = Number(noakhaliDefault);
+    if(noaInput && !isNaN(noaInput)) {
+        if(noaInput < mainBalance) {
+            console.log(noaInput, typeof noaInput);
+            console.log(totalDonation, typeof totalDonation);
+            
+            
+            let result = noaInput + totalDonation;
+            console.log(result);
+            
+            noakhaliDefault.innerText= result;
+            let restAmount = mainBalance - noaInput;
+            mainBalance.innerHTML = restAmount;
+            // donateDetails.showModal();
+        }
+        else {
+            alert("You don't have sufficient balance!")
+        }
+    }
+    else {
+        alert('Please input a valid amount to donate')
+    }
+    document.getElementById('noa-input').value = '';
     
-}
-)
+})
