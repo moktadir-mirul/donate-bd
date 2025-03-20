@@ -1,21 +1,23 @@
 const donationArea = document.getElementById('donation-area');
 const historyContainer = document.getElementById('history-container');
-const mainBalance = (document.getElementById('main-balance').innerText);
-const noakhaliDefault = document.getElementById('noa-default').innerText;
+const mainBalance = document.getElementById('main-balance');
+const noakhaliDefault = document.getElementById('noa-default');
 const feniDefault = document.getElementById('feni-default');
 const quotaDefault = document.getElementById('quota-default');
-const donateDetails = document.getElementById('donateDetails');
+// const donateDetails = document.getElementById('donateDetails');
 const feniInput = Number(document.getElementById('feni-input').value);
 const quotaInput = Number(document.getElementById('quota-input').value);
+const donateDetails = document.getElementById('donate_details');
 
-let btns = document.querySelectorAll('.active');
+
 
 function removeActive () {
+    let btns = document.querySelectorAll('.active');
     for(let i = 0; i< btns.length; i++) { 
         btns[i].classList.remove('active');
     }
 }
-removeActive();
+
 document.getElementById('donate-btn').addEventListener('click', function() {
     removeActive();
     document.getElementById('donate-btn').classList.add('active');
@@ -31,24 +33,20 @@ document.getElementById('history-btn').addEventListener('click', function() {
     historyContainer.classList.remove('hidden');
 })
 
-document.getElementById('noakhali-donate').addEventListener('click', function() {
+document.getElementById('noakhali-donate').addEventListener('click', function(event) {
+    event.preventDefault();
+    
     const noaInput = Number(document.getElementById('noa-input').value);
-    console.log(mainBalance);
-    console.log(typeof noakhaliDefault);
-    let totalDonation = Number(noakhaliDefault);
+    let totalDonation = Number(noakhaliDefault.innerText);
     if(noaInput && !isNaN(noaInput)) {
-        if(noaInput < mainBalance) {
-            console.log(noaInput, typeof noaInput);
-            console.log(totalDonation, typeof totalDonation);
-            
+        if(noaInput < Number(mainBalance.innerText)) {
             
             let result = noaInput + totalDonation;
-            console.log(result);
-            
-            noakhaliDefault.innerText= result;
-            let restAmount = mainBalance - noaInput;
+            noakhaliDefault.innerHTML= result;
+            let restAmount = Number(mainBalance.innerText) - noaInput;
             mainBalance.innerHTML = restAmount;
-            // donateDetails.showModal();
+            document.getElementById('modal-am').innerText = noaInput;
+            donateDetails.showModal();
         }
         else {
             alert("You don't have sufficient balance!")
@@ -59,4 +57,8 @@ document.getElementById('noakhali-donate').addEventListener('click', function() 
     }
     document.getElementById('noa-input').value = '';
     
+})
+document.getElementById('btn-some').addEventListener('click', function(e) {
+    e.preventDefault();
+    donateDetails.classList.add('hidden');
 })

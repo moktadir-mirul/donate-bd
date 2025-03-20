@@ -65,7 +65,7 @@
           </button>
           <button
             id="history-btn"
-            class="btn btn-lg hover:bg-[#B4F461] duration-200 active"
+            class="btn btn-lg hover:bg-[#B4F461] duration-200"
           >
             History
           </button>
@@ -112,6 +112,7 @@
             />
             <button
               id="noakhali-donate"
+              type="submit"
               class="btn btn-block h-14 bg-[#B4F461] hover:bg-lime-500 text-lg rounded-lg"
             >
               Donate Now
@@ -227,15 +228,15 @@
 
       <!-- Modal Section -->
       <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
-      <dialog id="donateDetails" class="modal modal-bottom sm:modal-middle">
+      <dialog id="donate_details" class="modal modal-bottom sm:modal-middle">
         <div class="modal-box text-center">
           <h3 class="text-2xl font-bold">Congrates!</h3>
           <img class="w-16 py-6 mx-auto" src="assets/coin.png" alt="Coin Icon">
-          <p class="py-4">You have donated for mankind <br> <span class="text-xl font-bold">successfully</span></p>
+          <p class="py-4">You have donated for mankind <br> <span class="text-xl font-bold">successfully</span> <span id="modal-am"></span></p>
           <div class="modal-action w-full flex justify-center">
             <form method="dialog ">
               <!-- if there is a button in form, it will close the modal -->
-              <button class="btn">Close Information</button>
+              <button id="btn-some" class="btn">Close Information</button>
             </form>
           </div>
         </div>
