@@ -215,15 +215,8 @@
       </section>
 
       <!-- Hisotry Section -->
-      <section id="history-container" class="hidden">
-        <div class="w-4/5 mx-auto p-4 border border-gray-200 rounded-lg">
-          <h1 class="text-xl font-bold text-black">
-            96500 taka has been tarnsacted to Noakhali fFlood Victim
-          </h1>
-          <p class="text-gray-500 text-lg font-light">
-            date: 19 March 2025, 04:43:45s GMT+6.00
-          </p>
-        </div>
+      <section id="history-container" class="hidden space-y-3">
+
       </section>
 
       <!-- Modal Section -->
@@ -243,18 +236,18 @@
       </dialog> -->
       <!-- Open the modal using ID.showModal() method -->
       
-<dialog id="donate_details" class="modal modal-bottom sm:modal-middle">
-  <div class="modal-box text-center">
-    <h3 class="text-2xl font-bold">Congrates!</h3>
-    <img class="w-16 py-6 mx-auto" src="assets/coin.png" alt="Coin Icon">
-    <p class="py-4">You have donated for mankind <br> <span class="text-xl font-bold">successfully</span> <span id="modal-am"></span></p>
-    <div class="modal-action w-full flex justify-center">
-      <form method="dialog" onsubmit="(e) => {e.preventDefault()}">
-        <button id="btn-some" class="btn">Close Information</button>
-      </form>
-    </div>
-  </div>
-</dialog>
+      <dialog id="donate_details" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box text-center">
+          <h3 class="text-2xl font-bold">Congrates!</h3>
+          <img class="w-16 py-6 mx-auto" src="assets/coin.png" alt="Coin Icon">
+          <p class="py-4">You have donated for mankind <br> <span class="text-xl font-bold">successfully</span></p>
+          <div class="modal-action w-full flex justify-center">
+            <form method="dialog" >
+              <button id="btn-some" class="btn">Close Information</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
     </main>
     <footer
       id="footer"
